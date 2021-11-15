@@ -2,12 +2,15 @@ package com.solvd.lab3;
 
 import java.util.Objects;
 
-public class Animal implements AnimalSound, AnimalEat, AnimalSleep, AnimalHome, TimeOfLife {
+public class Animal implements IanimalSound, IanimalSleep, IanimalTime, Ihome, IanimalEat {
+
 	
 	protected String name;
 	protected int weigth; 
 	protected String type;
 	protected String movement;
+	int num;
+	String home;
 
 	public Animal() {
 		super (); 
@@ -19,35 +22,31 @@ public class Animal implements AnimalSound, AnimalEat, AnimalSleep, AnimalHome, 
 		this.type=type;
 		this.weigth=weigth;
 		this.movement=movement;
-		
-	}
-	
-	public void time(String name, int num) {
-	
-	}
-	
-	public void home() {
-		
-	}
+	}	
 
-	public void sleep() {
-		System.out.println( name + " is zzz... ");
-	}
 	
-	public void animaleat() {	
-	}
+	public void identification(String name, String type) throws CustomException {
 	
-	public void animalsound() {	
-	}
-	
-	public void identification(String name, String type) {
+		
+		if( name.equals(type)) {
+			throw new CustomException();
+		} if (name ==null || name.length()<=1) {
+			throw new CustomException();
+		} if (type ==null || type.length()<=1) {
+			throw new CustomException();
+		}		
 		System.out.println("its a :" + name + "and are :" + type);
 		
 	}
 	
-	public void typeOfAnimal(int weight, String movement) {
-		System.out.println( " Weight "+ weight+" kg," + " and are : " + movement);
+	public void typeOfAnimal(int weight, String movement) throws CustomException {
 		
+		if(weight<0) {
+			throw new CustomException();
+		} if (movement.length()<=1 || movement == null){
+			throw new CustomException();
+		}	
+			System.out.println( " Weight "+ weight+" kg," + " and are : " + movement);
 	}
 
 	public void movement() {
@@ -55,7 +54,7 @@ public class Animal implements AnimalSound, AnimalEat, AnimalSleep, AnimalHome, 
 		
 	}
 	
-	@Override
+	
 	public String toString() {
 		return "Animal [name=" + name + ", weigth=" + weigth + ", type=" + type + ", movement=" + movement + "]";
 	}
@@ -110,23 +109,73 @@ public class Animal implements AnimalSound, AnimalEat, AnimalSleep, AnimalHome, 
 				&& Objects.equals(type, other.type);
 	}
 
-	@Override
-	public void time() {
-		
+
+	public void eat() {
+		// TODO Auto-generated method stub
 		
 	}
 
 
+	public void home() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void time() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void animalSleep() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
+	public void animalSound() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void time(String name, int num) throws CustomException {
+		if(num>=100 || num <=0 ) {
+			throw new CustomException();
+		} if(name.length()<=1)
+			throw new CustomException();
+		System.out.println( "the " + name + " has a time of life of " +  num + " years");
+	}
+	
+	
+	public void home(String name, String home) throws CustomException {
+		
+		if (name.length()<=1 || home.length()<=1 ) {
+			throw new CustomException();
+			} if (name.length()>10 || home.length()>10) {
+				throw new CustomException();
+			}
+		System.out.println(name + " lives in: " + home);
+	}
+	
+	public void eat(String name, String food) {
+		System.out.println(name + " feeds on: " + food);
+	}
+	
+	public void animalSound(String name, String sound) throws CustomException{
+		
+		if (name.equals(sound)) {
+			throw new CustomException();
+		} if (name == null || sound == null) {
+			throw new CustomException();
+		}
+		System.out.println( name + " do a sound like a  " + sound);
+	}	
+	
+	public void animalSleep(String name) {
+		System.out.println( name + " is zzz... ");
+		
+	}
+		
 
-	
-
-	
-	
-
-	
-	
 	
 	
 }

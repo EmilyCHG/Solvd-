@@ -3,11 +3,12 @@ package com.solvd.lab3;
 
 public final class DomesticAnimal {
 
-	String name = "dog";
+	public final static String NAME_ANI = "dog";
 	final int YEAR = 14;
 	
-	public final void play (String name) {
-		System.out.println( name + " plays with the ball");
+	public final void play () {
+		
+		System.out.println( NAME_ANI + " plays with the ball");
 		
 	}	
 	
@@ -16,13 +17,7 @@ public final class DomesticAnimal {
 			
 	}
 
-	public final String getName() {
-		return name;
-	}
-
-	public final int getYEAR() {
-		return YEAR;
-	}
+	
 	
 	
 

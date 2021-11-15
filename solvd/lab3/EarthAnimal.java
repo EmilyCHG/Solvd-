@@ -3,55 +3,28 @@ package com.solvd.lab3;
 
 import java.util.Objects;
 
-public class EarthAnimal extends Animal{
+public class EarthAnimal extends Animal {
 
 	public EarthAnimal() {
 		super();
 		}
-		String food;
-		String sound;
+	
 		String skin;
 		String gender;
+		String food;
+		String sound;
 		
 		
-		public void time(String name, int num) {
-			System.out.println("the " + name + " has a time of life of " +  num + " years");
-		}
-		
-		public void home(String name, String home) {
-			System.out.println( name + "lives in " + home );
-		}
-		
-		public void sleep(String name) {
-			System.out.println( name + " is zzz... ");
-		}
-		
-		public void animaleat(String name, String food) {
-			System.out.println(name + " feeds on: " + food);
-		}
-		
-		public void animalsound(String name, String sound) {
-			System.out.println("the " + name + " makes a sound like: " + sound);
-		}
-		
-		public void identification(String name, String type) {
-			System.out.println("its a :" + name + "and are :" + type);
-			
-		}
-		
-		public void typeOfAnimal(int weight, String movement) {
-			System.out.println( " Weight "+ weight +" kg," + " and are : " + movement);
-		}
-		
+		@Override
 		public void movement() {
+			
+			
 			System.out.println("moves on earth");
 		}
 		
-		public String toString() {
-			return "Animal [name=" + name + ", weigth=" + weigth + ", type=" + type + ", movement=" + movement + "]";
-		}
-		
 		public void description(String skin, String gender) {
+			
+			
 			System.out.println("type of skin :" + skin + " gender: " + gender);
 		}
 
@@ -74,6 +47,8 @@ public class EarthAnimal extends Animal{
 			EarthAnimal other = (EarthAnimal) obj;
 			return Objects.equals(gender, other.gender) && Objects.equals(name, other.name);
 		}
+
+
 
 		
 	

@@ -7,12 +7,18 @@ public class AnimalsRunner {
 
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CustomException  {
 	
 		
 		
 		Animal earthAnimal1 = new EarthAnimal();
-		earthAnimal1.identification(" lyon " , " mammal ");
+		try {
+			earthAnimal1.identification("lyon" , "lyon");
+		} catch (CustomException e) {
+			System.out.println(" Invalided dates. " + e.getMessage());
+			
+			System.out.println("----------------------------");
+		}
 		earthAnimal1.movement();
 		earthAnimal1.typeOfAnimal(190, "quadrupeds");
 		((EarthAnimal) earthAnimal1).description("short coat","felidae");
@@ -59,6 +65,8 @@ public class AnimalsRunner {
 		airAnimal2.identification("duck","oviparous");
 		airAnimal2.typeOfAnimal(3,"palmipeds");
 		airAnimal2.description("pens","Anatidae");
+		
+		EarthAnimal earthAnimal3 = 	new EarthAnimal();	
 	
 		System.out.println("--------------------------------");
 		
@@ -72,13 +80,40 @@ public class AnimalsRunner {
 		}
 		
 		//interfaces
+		System.out.println("----------------------------");
+		
+		try {
+			earthAnimal1.time("ly",-20);
+		} catch (CustomException e) {
+			
+			System.out.println(" Invalided dates. " + e.getMessage());
+			
+			System.out.println("----------------------------");
+		}
+		
+		try {
+			earthAnimal2.time("Monkey",4);
+		} catch (CustomException e) {
+			System.out.println(" Invalided dates. " + e.getMessage());
+			
+			System.out.println("----------------------------");
+		}
+		
+		try {
+			airAnimal2.home("duck","lakes");
+		} catch (CustomException e) {
+			System.out.println(" Invalided dates. " + e.getMessage());
+			
+			System.out.println("----------------------------");
+		}
+		
+		airAnimal1.animalSleep("eagle");
+		earthAnimal2.animalSound("monkey","juju");
 		System.out.println("--------------------------------");
 		
-		airAnimal2.home("duck","lakes");
-		earthAnimal1.time("lyon",20);
-		airAnimal1.sleep("eagle");
-		earthAnimal2.animalsound("monkey","juju");
-		airAnimal1.animaleat("eagle","animals");
+		airAnimal1.identification("c","cat");
+		
+		airAnimal1.eat("eagle","animals");
 		
 		System.out.println("--------------------------------");
 		
@@ -86,7 +121,7 @@ public class AnimalsRunner {
 		//FINAL METHODS
 		
 		final DomesticAnimal  domAni = new DomesticAnimal();
-		domAni.play("dog");
+		domAni.play();
 		domAni.live(20);
 		
 		System.out.println("--------------------------------");
@@ -96,6 +131,10 @@ public class AnimalsRunner {
 		StaticPetshop.open();
 		StaticPetshop.close();
 		
+		System.out.println("--------------------------------");
+		
+		earthAnimal3.animalSound("","");
+		System.out.println("--------------------------------");
 		
 	
 	}

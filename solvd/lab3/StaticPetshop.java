@@ -3,17 +3,18 @@ package com.solvd.lab3;
 
 public class StaticPetshop {
 
-	static String shop = "little PET";
-	static int hour = 8;
-	static int hour2= 18;
+	public final static String NAME_SHOP = "little PET";
+	public final static int HOUR =8;
+	public final static int HOUR2= 18;
 
 
 	public static void open() {
-	System.out.println("the " + shop + " opens at " + 8 + " am" );
+		
+	System.out.println("the " + NAME_SHOP + " opens at " + HOUR + " am" );
 	}
 
 	public static void close () {
-	System.out.println("the " + shop + " closes at " + 18 + " pm" );
+	System.out.println("the " + NAME_SHOP + " closes at " + HOUR2 + " pm" );
 	}
 
 }
