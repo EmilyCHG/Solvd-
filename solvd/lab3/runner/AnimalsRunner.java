@@ -1,9 +1,16 @@
 
 package com.solvd.lab3.runner;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
@@ -239,6 +246,22 @@ public class AnimalsRunner {
 		}
         */
 		
+		List <Set <EarthAnimal>> earthAnimal = new ArrayList <Set <EarthAnimal>>();
+		
+		Set <EarthAnimal> mov1 = new HashSet<EarthAnimal>();
+		Set <EarthAnimal> mov2 = new HashSet<EarthAnimal>();
+
+		
+		mov1.add(earthAnimal1);
+		mov2.add(earthAnimal2);
+		
+		earthAnimal.add(0,mov1);
+		earthAnimal.add(1,mov2);
+		earthAnimal.add(2,mov1);
+		
+		System.out.println(earthAnimal);
+	
+		
 		System.out.println();
 		System.out.println("------------Implemention  Set List--------------------");
 		System.out.println();
@@ -254,53 +277,145 @@ public class AnimalsRunner {
 		
 		System.out.println("Size: " + identification2.size());
 		System.out.println("Is Empty: " + identification2.isEmpty());
-		System.out.println("Contains; " + identification2.contains(earthAnimal1));
+		System.out.println("Contains: " + identification2.contains(earthAnimal1));
 		System.out.println("Remove: " + identification2.remove(airAnimal1));
 		
-		for (Animal element : identification2) {
+		
+		for(Animal element : identification2 ) {
 			System.out.println(element);
 		}
 		
-		
-	    
 		
 		System.out.println();
 		System.out.println("------------Implementation TreeSet List--------------------");
 		System.out.println();
 
 	    
-		Set<String> NameAnimal = new TreeSet<>();
+		Set<String> nameAnimal = new TreeSet<>();
 		
-		NameAnimal.add("Lyon");
-		NameAnimal.add("Monkey");
-		NameAnimal.add("Eagle");
-		NameAnimal.add("Duck");
-		NameAnimal.add("Cat");
-		NameAnimal.add("Dog");
-		NameAnimal.add("Elephant");
-		NameAnimal.add("Giraffe");
-		NameAnimal.add("Mouse");
+		nameAnimal.add("Lyon");
+		nameAnimal.add("Lyon");
+		nameAnimal.add("Monkey");
+		nameAnimal.add("Eagle");
+		nameAnimal.add("Duck");
+		nameAnimal.add("Cat");
+		nameAnimal.add("Dog");
+		nameAnimal.add("Elephant");
+		nameAnimal.add("Giraffe");
+		nameAnimal.add("Mouse");
 		
-		System.out.println("Size: " + NameAnimal.size());
-		System.out.println("Contains; " + NameAnimal.contains("Monkey"));
-		System.out.println("Remove: " + NameAnimal.remove("Dog"));
+		System.out.println("Size: " + nameAnimal.size());
+		System.out.println("Contains; " + nameAnimal.contains("Monkey"));
+		System.out.println("Remove: " + nameAnimal.remove("Dog"));
 		
-		for(String element : NameAnimal ) {
+		for(String element : nameAnimal ) {
 			System.out.println(element);
 		}
 	
-	
-	
 		
-		
-			
-	
-		 
-		 
-	   
-	
+		System.out.println();
+		System.out.println("------------Implementation LinkedList List--------------------");
+		System.out.println();
 
 		
+		LinkedList<String> movement = new LinkedList<>();
+		
+		movement.add("quadruped");
+		movement.add("biped");
+		movement.add("flying");
+		movement.add("palmipeds");
+		movement.add("trail");
+		movement.add("swimming");
+		
+		System.out.println(movement.getFirst());
+		System.out.println(movement.getLast());
+		System.out.println(movement.removeLast());
+		System.out.println(movement);
+		
+		System.out.println(movement.get(4));
+		
+	
+		System.out.println();
+		System.out.println("------------Implemention  Queue List--------------------");
+		System.out.println();
+		
+		
+		Queue<String> nameAnimal2 = new LinkedList<>();
+	
+		nameAnimal2.add("Lyon");
+		nameAnimal2.add("Lyon");
+		nameAnimal2.add("Monkey");
+		nameAnimal2.add("Eagle");
+		nameAnimal2.add("Duck");
+		nameAnimal2.add("Cat");
+		nameAnimal2.add("Dog");
+		nameAnimal2.add("Elephant");
+		nameAnimal2.add("Giraffe");
+		nameAnimal2.add("Mouse");
+		 
+	   
+		//for(String element : nameAnimal2 ) {
+			//System.out.println(element);
+		//}
+		
+		//nameAnimal2.poll();
+		System.out.println(nameAnimal2.poll());
+		System.out.println(nameAnimal2);
+		
+		System.out.println(nameAnimal2.toArray()[5]);
+		
+		System.out.println(nameAnimal2.poll()); //Subtract
+		System.out.println(nameAnimal2);
+		
+		
+		//nameAnimal2.poll();
+		
+		System.out.println(nameAnimal2.peek()); //add
+		System.out.println(nameAnimal2);
+		
+		System.out.println(nameAnimal2.toArray()[5]);
+		
+		System.out.println();
+		System.out.println("------------Implementation Maps and HashMap List--------------------");
+		System.out.println();
+		
+		Map<String, EarthAnimal> list = new HashMap <String, EarthAnimal>();
+		
+		list.put("First Animal ", earthAnimal2);
+		list.put("Second Animal ", earthAnimal1);
+		
+		//list.replace("First Animal ", earthAnimal2);
+		//list.get("First Animal");
+		//list.remove("Second Animal");
+		
+		
+		for (Entry<String, EarthAnimal> e : list.entrySet()) {
+		System.out.println(e.getKey() + " - " + e.getValue());
+
 		}
+		
+		System.out.println();
+		System.out.println("------------Implementation Generics --------------------");
+		System.out.println();
+	
+		GenericClass <String> listGe = new GenericClass <String>();
+	
+		listGe.push("Lyon");
+		listGe.push("Monkey");
+		listGe.push("Rabbit");
+		listGe.push("Cow");
+		listGe.push("Fish");
+		
+		System.out.println(listGe.pop());
+		System.out.println(listGe.pop());	
+		System.out.println(listGe.pop());
+		
+		System.out.println(listGe.peek());
+	
+	
+	
+	
+	
+	}
 	
 }
