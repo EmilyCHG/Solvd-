@@ -12,17 +12,11 @@ public class AirAnimal extends Animal{
 		String type;
 		int speed;
 		int num;
-
 			
 		public void movement( int speed) {
 			System.out.println(" It's " + movement + " with a velocity " + speed+ "km/h");
 		}
-		
-		public void description(String skin, String gender) {
-			System.out.println("type of skin :" + skin + " gender: " + gender);
-		}
 
-		
 		public int getSpeed() {
 			return speed;
 		}
@@ -50,12 +44,7 @@ public class AirAnimal extends Animal{
 			AirAnimal other = (AirAnimal) obj;
 			return Objects.equals(name, other.name) && Objects.equals(type, other.type);
 		}
-
-
-		
-		
-		
-		
+	
 		
 		
 	}

@@ -1,15 +1,9 @@
 
 package com.solvd.lab3;
 
-public interface IanimalTime {
+public interface IAnimalTime {
 
 	public void time();
 
-	void home();
 	
-	void eat();
-
-	void animalSleep();
-
-	void animalSound();
 }

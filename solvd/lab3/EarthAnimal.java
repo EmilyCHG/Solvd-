@@ -13,21 +13,20 @@ public class EarthAnimal extends Animal {
 		String gender;
 		String food;
 		String sound;
-		
+
+	
+		@Override
+		public void description(String skin, String gender) {
+			System.out.println(" It has " + skin + " and it gender is " + gender);
+			
+		}	
 		
 		@Override
 		public void movement() {
-			
-			
-			System.out.println("moves on earth");
+		System.out.println("moves on earth");
+		
 		}
 		
-		public void description(String skin, String gender) {
-			
-			
-			System.out.println("type of skin :" + skin + " gender: " + gender);
-		}
-
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -48,6 +47,10 @@ public class EarthAnimal extends Animal {
 			return Objects.equals(gender, other.gender) && Objects.equals(name, other.name);
 		}
 
+		
+			
+		}
+
 
 
 		
@@ -55,5 +58,5 @@ public class EarthAnimal extends Animal {
 		
 		
 		
-}
+
 
